@@ -5,10 +5,14 @@
 ### build
 
 ```
+# get the font files
+sh GetSourceHanFont.sh
+# build the docker
 docker build -t your_pandoc .
 ```
 
 ```
+# run it on your input file
 docker run --rm -v `pwd`:/data -w /data your_pandoc -f markdown \
 	--template /template/eisvogel_zh.tex -t latex \
 	--metadata-file=/template/mydoc.yaml --pdf-engine=xelatex \
