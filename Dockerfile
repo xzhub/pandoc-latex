@@ -23,3 +23,7 @@ RUN tlmgr update --self && \
     fontawesome5 \
     footmisc \
     sectsty
+ADD Fonts  /usr/share/fonts/
+RUN mkdir /template
+COPY eisvogel_zh.tex /template/
+COPY mydoc.yaml /template/

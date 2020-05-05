@@ -1,5 +1,19 @@
 # Pandoc LaTeX with Eisvogel
 
+## Trying to make this docker work for CJK document
+
+### build
+
+```
+docker build -t your_pandoc .
+```
+
+```
+docker run --rm -v `pwd`:/data -w /data your_pandoc -f markdown \
+	--template /template/eisvogel_zh.tex -t latex \
+	--metadata-file=/template/mydoc.yaml --pdf-engine=xelatex \
+	-o output.pdf input.md
+```
 
 ## Introduction
 
